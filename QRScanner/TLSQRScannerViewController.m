@@ -59,10 +59,15 @@
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             [self stopScanning];
+            __weak id weakSelf = self;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIAlertView bk_showAlertViewWithTitle:@"QRMessage" message:[metadataObj stringValue] cancelButtonTitle:@"确定" otherButtonTitles:nil handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                    [weakSelf cancleScanButtonClicked:nil];
+                }];
+
+            });
             
-            [UIAlertView bk_showAlertViewWithTitle:@"QRMessage" message:[metadataObj stringValue] cancelButtonTitle:@"确定" otherButtonTitles:nil handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-                ;
-            }];
+            NSLog(@"%@",metadataObj.stringValue);
         }
     }
 }
@@ -81,21 +86,17 @@
     [self.captureSession addInput:deviceInput];
     
     AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc]init];
-    [output setMetadataObjectTypes:[NSArray arrayWithObject:AVMetadataObjectTypeQRCode]];
     [self.captureSession addOutput:output];
+    [output setMetadataObjectTypes:[NSArray arrayWithObject:AVMetadataObjectTypeQRCode]];
+    
     
     dispatch_queue_t dispatchQueue;
     dispatchQueue = dispatch_queue_create("myQueue", NULL);
     [output setMetadataObjectsDelegate:self queue:dispatchQueue];
     self.videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.captureSession];
     self.videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    self.videoPreviewLayer.frame = self.preView.layer.bounds;
+    self.videoPreviewLayer.frame = self.preView.bounds;
     [self.preView.layer addSublayer:self.videoPreviewLayer];
-    
-    return YES;
-    
-    
-    
     
     return YES;
 }
