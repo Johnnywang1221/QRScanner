@@ -14,6 +14,9 @@
 		3A0BC6941BC3C70400238371 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A0BC6931BC3C70400238371 /* Images.xcassets */; };
 		3A0BC6971BC3C70400238371 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0BC6951BC3C70400238371 /* LaunchScreen.xib */; };
 		3A0BC6A31BC3C70400238371 /* QRScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC6A21BC3C70400238371 /* QRScannerTests.m */; };
+		3A0BC6AF1BC3C83C00238371 /* TLSQRScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC6AD1BC3C83C00238371 /* TLSQRScannerViewController.m */; };
+		3A0BC6B01BC3C83C00238371 /* TLSQRScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0BC6AE1BC3C83C00238371 /* TLSQRScannerViewController.xib */; };
+		3A0BC6B31BC3FFCB00238371 /* UIAlertView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC6B21BC3FFCB00238371 /* UIAlertView+BlocksKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		3A0BC69C1BC3C70400238371 /* QRScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0BC6A11BC3C70400238371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A0BC6A21BC3C70400238371 /* QRScannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRScannerTests.m; sourceTree = "<group>"; };
+		3A0BC6AC1BC3C83C00238371 /* TLSQRScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSQRScannerViewController.h; sourceTree = "<group>"; };
+		3A0BC6AD1BC3C83C00238371 /* TLSQRScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSQRScannerViewController.m; sourceTree = "<group>"; };
+		3A0BC6AE1BC3C83C00238371 /* TLSQRScannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLSQRScannerViewController.xib; sourceTree = "<group>"; };
+		3A0BC6B11BC3FFCB00238371 /* UIAlertView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+BlocksKit.h"; sourceTree = "<group>"; };
+		3A0BC6B21BC3FFCB00238371 /* UIAlertView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+BlocksKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,9 @@
 				3A0BC6901BC3C70400238371 /* Main.storyboard */,
 				3A0BC6931BC3C70400238371 /* Images.xcassets */,
 				3A0BC6951BC3C70400238371 /* LaunchScreen.xib */,
+				3A0BC6AC1BC3C83C00238371 /* TLSQRScannerViewController.h */,
+				3A0BC6AD1BC3C83C00238371 /* TLSQRScannerViewController.m */,
+				3A0BC6AE1BC3C83C00238371 /* TLSQRScannerViewController.xib */,
 				3A0BC6861BC3C70400238371 /* Supporting Files */,
 			);
 			path = QRScanner;
@@ -96,6 +107,8 @@
 		3A0BC6861BC3C70400238371 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A0BC6B11BC3FFCB00238371 /* UIAlertView+BlocksKit.h */,
+				3A0BC6B21BC3FFCB00238371 /* UIAlertView+BlocksKit.m */,
 				3A0BC6871BC3C70400238371 /* Info.plist */,
 				3A0BC6881BC3C70400238371 /* main.m */,
 			);
@@ -163,6 +176,7 @@
 		3A0BC67B1BC3C70400238371 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TLS;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = tls;
 				TargetAttributes = {
@@ -201,6 +215,7 @@
 			files = (
 				3A0BC6921BC3C70400238371 /* Main.storyboard in Resources */,
 				3A0BC6971BC3C70400238371 /* LaunchScreen.xib in Resources */,
+				3A0BC6B01BC3C83C00238371 /* TLSQRScannerViewController.xib in Resources */,
 				3A0BC6941BC3C70400238371 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +236,8 @@
 			files = (
 				3A0BC68F1BC3C70400238371 /* ViewController.m in Sources */,
 				3A0BC68C1BC3C70400238371 /* AppDelegate.m in Sources */,
+				3A0BC6AF1BC3C83C00238371 /* TLSQRScannerViewController.m in Sources */,
+				3A0BC6B31BC3FFCB00238371 /* UIAlertView+BlocksKit.m in Sources */,
 				3A0BC6891BC3C70400238371 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

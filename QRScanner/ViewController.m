@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "TLSQRScannerViewController.h"
 
 @interface ViewController ()
+//@property (nonatomic, strong) TLSQRScannerViewController *scanViewController;
+- (IBAction)scanButtonClicked:(id)sender;
 
 @end
 
@@ -17,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +28,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)scanButtonClicked:(id)sender {
+    TLSQRScannerViewController *scanViewController = [[TLSQRScannerViewController alloc]init];
+    [self presentViewController:scanViewController animated:YES completion:nil];
+    
+}
+
+#pragma mark - getter/setter
+
+//-(TLSQRScannerViewController *)scanViewController{
+//    if (_scanViewController == nil) {
+//        _scanViewController = [[TLSQRScannerViewController alloc]init];
+//    }
+//    return _scanViewController;
+//}
 @end
